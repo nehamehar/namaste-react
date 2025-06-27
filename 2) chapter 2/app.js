@@ -1,5 +1,12 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
+import React from "react" //taking react from module
+import ReactDOM from "react-dom/client" //taking reactDOM from module
+
+// for reactelement
+const heading = React.createElement("h1", {id:"heading"}, "namaste 🚀")
+//for reactdomelement
+const root = ReactDOM.createRoot(document.getElementById("root"))
+// making onject html
+root.render(heading)
 
 
 // jsx(creating h1) :
@@ -59,7 +66,8 @@ const Head=()=> (
 <div className="head">
     {title} // how we render our element into componet
     {/* {200+300},
-    {number},
+    {number}, --- react elemt
+    <Head/> or <Head> </Head> or {Head()} -- call fun component
     {console.log("heyyyy")} */}
 <h1>namaste 🙏 </h1>
 </div>
@@ -68,3 +76,7 @@ const Head=()=> (
 const root = ReactDOM.createRoot(document.getElementById("root"))
 //root.render(Head) ❌ only for react element we can render that like this
 root.render(<Head/>) //❤️ this is how we render fun component
+
+
+
+//
