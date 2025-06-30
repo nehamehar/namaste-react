@@ -1,0 +1,107 @@
+const Item=({Name, cussiene} or props)=>{
+    return(
+        <div className="items" style={{backgroundColor:"lightgrey"}}>
+            <img className="chawal"  alt="processing"src="https://madscookhouse.com/wp-content/uploads/2023/03/Punjabi-Wadi-Chawal-500x500.jpg"></img>
+            <h3>{Name}</h3> or <h3>props.Name</h3>
+            <h4>{cussiene}</h4>
+            <h4>4.4 Starts</h4>
+            <h4>38 minutes</h4>
+        </div>
+    )
+}
+
+//making object for config dreiven code for mutiple items 
+const resObj = [
+  {
+    type: "restaurant",
+    data: {
+      id: "1",
+      name: "Meghana Foods",
+      cuisines: ["Biryani", "Andhra"],
+      avgRating: 4.4,
+      maxDeliveryTime: "30 mins",
+      cloudinaryImageId: "xqwpuhgnsaf18te7zvtv",
+      area: "HSR Layout"
+    }
+  },
+  {
+    type: "restaurant",
+    data: {
+      id: "2",
+      name: "Truffles",
+      cuisines: ["American", "Continental", "Desserts"],
+      avgRating: 4.5,
+      maxDeliveryTime: "28 mins",
+      cloudinaryImageId: "cd832b6167eb9f88aeb1ccdebf38d942",
+      area: "Koramangala"
+    }
+  },
+  {
+    type: "restaurant",
+    data: {
+      id: "3",
+      name: "Empire Restaurant",
+      cuisines: ["North Indian", "Kebabs"],
+      avgRating: 4.2,
+      maxDeliveryTime: "35 mins",
+      cloudinaryImageId: "jksbdu1237y81ekf3p",
+      area: "Indiranagar"
+    }
+  },
+  {
+    type: "restaurant",
+    data: {
+      id: "4",
+      name: "Hari Super Sandwich",
+      cuisines: ["Street Food", "Fast Food"],
+      avgRating: 4.0,
+      maxDeliveryTime: "25 mins",
+      cloudinaryImageId: "blbcjn7gh6u4jsjywphu",
+      area: "Jayanagar"
+    }
+  },
+  {
+    type: "restaurant",
+    data: {
+      id: "5",
+      name: "Adyar Ananda Bhavan",
+      cuisines: ["South Indian", "Sweets"],
+      avgRating: 4.1,
+      maxDeliveryTime: "20 mins",
+      cloudinaryImageId: "oywpa5p0xmyzzcjcpgxg",
+      area: "Malleshwaram"
+    }
+  }
+];
+
+
+const Body =()=>{
+    return(
+        <div className="body">
+            <div className="search">Search
+            </div>
+            <div className="container">
+                {/* <Item Name="kfc" cussiene="biryani"/> 
+                <Item  Name="kf" cussiene="biryan"/> -- this is for not valid for multiple restautent and items for that we take config driven code */}
+                
+                <Item resList={resObj[0]}/>
+                {/* instead of this we use clean code for not writting as it were be 400 items like this by looping is best using js  */}
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+                <Item/>
+            </div>
+        </div>
+    )
+}
