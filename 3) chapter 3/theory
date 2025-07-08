@@ -85,7 +85,12 @@ const Body =()=>{
                 <Item  Name="kf" cussiene="biryan"/> -- this is for not valid for multiple restautent and items for that we take config driven code */}
                 
                 <Item resList={resObj[0]}/>
+                <Item resList={resObj[1]}/>
                 {/* instead of this we use clean code for not writting as it were be 400 items like this by looping is best using js  */}
+                 {resList.map((restaurant) => (
+            // we have to give unique id when we are looping in data to show each items with unique key not use index as bad practise//
+          <Item key={restaurant.info.id} resList={restaurant} />
+        ))}
                 <Item/>
                 <Item/>
                 <Item/>

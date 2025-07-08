@@ -1,0 +1,65 @@
+.header {
+  border: 2px solid #000;
+  justify-content: space-between;
+  display: flex;
+}
+
+img {
+  width: 100px;
+}
+
+.navbar {
+  padding-right: 20px;
+  font-size: 1.2rem;
+}
+
+.navbar > ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.navbar > ul > li {
+  margin: 10px;
+  padding: 15px;
+}
+
+.items {
+  border: 2px solid #a4a4a4;
+  width: 210px;
+  margin: 10px;
+}
+
+.items:hover {
+  cursor: pointer;
+  border: 1px solid #6d6d6d;
+}
+
+.container {
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  display: flex;
+}
+
+h3, h4 {
+  justify-content: center;
+  display: flex;
+}
+
+.filter-btn {
+  margin-top: 10px;
+  padding: 4px;
+  font-size: 1rem;
+}
+
+.filter-btn:hover {
+  cursor: pointer;
+}
+
+.chawal {
+  width: 190px;
+  height: 160px;
+  padding: .5rem;
+  display: flex;
+}
+/*# sourceMappingURL=namaste-react.9e4c6fd2.css.map */

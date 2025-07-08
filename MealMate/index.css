@@ -1,0 +1,131 @@
+
+
+.header{
+    display:flex;
+    justify-content:space-between;
+    border: 2px solid darkgrey;
+}
+
+img {
+    width:100px;
+
+}
+
+.navbar{
+    padding-right:20px;
+    font-size:1.2rem;
+    font-family: 'Poppins', sans-serif;
+}
+.navbar>ul {
+    display:flex;
+    list-style-type:none;
+}
+
+.navbar>ul>li{
+    padding:15px;
+    margin: 10px;
+}
+.items{
+    font-family: 'Poppins', sans-serif;
+    margin:13px;
+    width:240px;
+    background-color: transparent;
+
+  flex-direction: column;     /* Stack vertically */
+  align-items: center;        /* ✅ Center children horizontally */
+  text-align: center;         /* ✅ Center text */
+}
+
+.items:hover{
+    cursor: pointer;
+
+}
+
+.items h4 {
+  margin: 6px 0;
+  font-weight: 400;
+  color:#494949;
+}
+.items h5{
+margin: 6px 0;
+  font-weight: 900;
+  color:#494949;
+}
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  justify-content: center;
+  column-gap: 20px;  /* space between items left to right */
+  row-gap: 1px; 
+  border: none;                /* ✅ hide border */
+  background-color: transparent; /* ✅ make background invisible */
+  box-shadow: none;            /* ✅ remove shadow if any */
+}
+
+h3{
+    display:flex;
+    justify-content:center;
+}
+h4{
+    display:flex;
+    justify-content:center;
+}
+.filter{
+    padding:4px;
+    font-size:1rem;
+    margin-top:10px;
+    display:flex;
+   justify-content:center;
+  
+}
+.search{
+    margin-right:60rem;
+}
+.filter-btn:hover{
+    cursor:pointer
+}
+.chawal{
+   width: 110%;
+  height: 38%;                /* or use height: 100% */
+  object-fit: cover;          /* crop & fill nicely */
+  object-position: center;    /* center the image */
+  border-radius: 10%;         /* match the item curve */
+  display: block; 
+  transition: transform 0.3s ease; 
+}
+.items:hover .chawal {
+  transform: scale(0.95); /* 👈 Slightly shrinks the image */
+}
+.shimmer-con{
+     display:flex;
+    justify-content:center;
+    flex-wrap:wrap
+}
+.card{
+
+    padding:20px;
+    margin:80px 20px;
+    height:160px;
+    width:15rem;
+    background-color:#f0f0f0;
+    border-radius:10%
+}
+.headers{
+    height:10px;
+    width:15rem;
+    background-color:#f0f0f0;
+}
+.login{
+    font-family: 'Poppins', sans-serif;
+    margin:18px;
+    padding:0.3px;
+    width:60px;
+    border-radius:10%;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+.search{
+    cursor:pointer
+}
