@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import Item from "./Item";
 import Shimmer from "./Shimmer";
 import Header from "./Header";
-
+import RestroMenu from "./RestroMenu";
+import { Link } from "react-router-dom";
 const Body = () => {
   const [Filtered, setFiltered] = useState([]); //resList
   const [Search, setSearch]=useState("")
@@ -49,9 +50,9 @@ return(
         {/* using map for getting data from reslist  */}
         {AfterSearch.map((restaurant) => (
             // we have to give unique id when we are looping in data to show each items with unique key not use index as bad practise//
-          <Item key={restaurant.info.id} resList={restaurant} />
+          <Link key={restaurant.info.id} to={"/restaurant/"+ restaurant.info.id}> <Item resList={restaurant} /> </Link>
         ))}
-      </div>
+      </div> 
     </div>
   );
 };

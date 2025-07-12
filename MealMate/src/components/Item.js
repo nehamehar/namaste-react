@@ -11,12 +11,7 @@ const Item = (props) => {
         className="chawal"
         alt="Restaurant"
         src={CDN_URL+cloudinaryImageId}
-      style={{ 
-    borderRadius: '10%', 
-    padding: '0.5px', 
-    objectFit: 'cover', 
-    objectPosition: 'center' 
-  }} 
+
 />
       <h3>{name}</h3>
        <hr style={{ width: "60%", marginTop: "", border: "1px solid #C8C8C8" }} /> 
