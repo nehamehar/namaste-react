@@ -1,4 +1,7 @@
-
+Body{
+    font-family: 'Poppins', sans-serif;
+    padding:0px;
+}
 
 .header{
     display:flex;
@@ -48,7 +51,7 @@ img {
 }
 .items h5{
 margin: 6px 0;
-  font-weight: 900;
+font-weight: 900;
   color:#494949;
 }
 .container {
@@ -87,8 +90,8 @@ h4{
 }
 .chawal{
    width: 110%;
-  height: 17rem;                /* or use height: 100% */
-  padding: 5px 10px;
+  height: 14rem;                /* or use height: 100% */
+  padding: 5px;
   object-fit: cover;          /* crop & fill nicely */
   object-position: center;    /* center the image */
   border-radius: 10%;         /* match the item curve */
@@ -129,4 +132,9 @@ h4{
 
 .search{
     cursor:pointer
+}
+
+.user{
+    padding:40px;
+
 }

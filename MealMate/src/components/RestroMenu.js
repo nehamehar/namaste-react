@@ -1,21 +1,12 @@
-import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
-import { Menu_URL } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
+
+
 const RestroMenu=()=>{
-    const [resInfo, setResInfo]=useState(null);
-    useEffect(()=>{
-    fetchMenu()
-},[])
-
-const {resId}=useParams();
-const fetchMenu = async ()=>{
-    const data = await fetch(Menu_URL + resId);
-    const json = await data.json();
-    console.log(json);
-    setResInfo(json.data)
-}
-
+  //useRestautrantsMenu.js code
+const {resId}=useParams(); 
+const resInfo =useRestaurantMenu(resId)
 const Info=resInfo?.cards?.[2]?.card?.card?.info;
 if(resInfo===null) return <Shimmer/>
 const {
@@ -26,14 +17,13 @@ const {
   totalRatingsString,
   availability,
   city
-} = Info
-console.log("Calling API:", Menu_URL + resId);
-const itemCards = resInfo?.cards?.[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards || [];
-const offers =
-    resInfo?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
+} = Info;
 
-  const isOpen = availability?.opened;
-// ;
+const itemCards = resInfo?.cards?.[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards?.[2]?.card?.card?.itemCards || [];
+const offers =  resInfo?.cards?.[3]?.card?.card?.gridElements?.infoWithStyle?.offers || [];
+const isOpen = availability?.opened;
+
+
     return(
         <div className="menu">
       <h1>{name}</h1>
@@ -52,10 +42,10 @@ const offers =
           </ul>
         </div>
       )}
-      <ul>
-        {itemCards.map((item) => (
+      <ul>{itemCards.map((item) => (
     <li key={item.card.info.id}>
-      {item.card.info.name} – ₹{(item.card.info.price || item.card.info.defaultPrice) / 100}</li>))}
+      {item.card.info.name} – ₹{(item.card.info.price || item.card.info.defaultPrice) / 100}
+       </li>))}
       </ul>
     </div>
   );

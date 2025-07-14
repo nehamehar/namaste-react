@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import Item from "./Item";
 import Shimmer from "./Shimmer";
-import Header from "./Header";
-import RestroMenu from "./RestroMenu";
 import { Link } from "react-router-dom";
+import { Body_URL } from "../utils/constants";
+import useOnlineStatus from "../utils/useONlineSTatus";
+
 const Body = () => {
   const [Filtered, setFiltered] = useState([]); //resList
   const [Search, setSearch]=useState("")
@@ -16,20 +17,22 @@ const Body = () => {
 // fetching data from api using async await 
    const fetchData= async()=>{
     // calling swiggy api with cors 
-   const data = await fetch(
-  "https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6139&lng=77.2090&page_type=DESKTOP_WEB_LISTING"
-);
+   const data = await fetch(Body_URL);
 const json = await data.json();
 // accessing res form api swiggy and updating Filtered through setFiltered:
 setFiltered(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 setAfterSearch(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 }
+const Online = useOnlineStatus()
+if (Online===false)
+  return (<h2>Opps..you are Offline</h2>)
 // making shimmer 
 // we call this conditional rendering
 if (!Filtered || Filtered.length === 0) {
   return <Shimmer />;
 }
 {/* <Item> data={Filtered}</Item> */}
+  
 return(
     <div className="body">
       <div className="filter">

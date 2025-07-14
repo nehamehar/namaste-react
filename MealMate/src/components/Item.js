@@ -10,9 +10,8 @@ const Item = (props) => {
       <img
         className="chawal"
         alt="Restaurant"
-        src={CDN_URL+cloudinaryImageId}
-
-/>
+        src={CDN_URL+cloudinaryImageId}/>
+        
       <h3>{name}</h3>
        <hr style={{ width: "60%", marginTop: "", border: "1px solid #C8C8C8" }} /> 
       <h5>⭐ {avgRating} Stars · {sla?.deliveryTime} mins</h5> 

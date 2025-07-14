@@ -19,6 +19,8 @@ const [Btn,setBtn] = useState("Login");
                         <Link to={"contact"}>Contact Us</Link></li>
                     <li>
                         <Link to={"cart"}>Cart</Link></li>
+                    <li>
+                        <Link to={"grocery"}>Grocery</Link></li>
                     {/* creating login logout button */}
                     <button className="login" onClick={()=>{Btn==="Login" ? setBtn("Logout"): setBtn("Login")}}> {Btn}
                     </button>

@@ -7,3 +7,4 @@ export const Menu_URL="https://www.swiggy.com/dapi/menu/pl?" +
                  "&lat=28.6139&lng=77.2090" + // Use a valid lat/lng
                  "&restaurantId=";
 
+export const Body_URL="https://thingproxy.freeboard.io/fetch/https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6139&lng=77.2090&page_type=DESKTOP_WEB_LISTING"
