@@ -15,14 +15,12 @@ const User = () => {
     if (!userInfo) {
     return <h2>Loading profile...</h2>;
   }
-    const { name, location, avatar_url } = userInfo.json;
+    const { name, location, avatar_url } = userInfo;
     return (
-        <div className="user" style={{ border: "1px solid black", padding: "7px", textAlign: "center" }}>
-            
+        <div className="" style={{ border: "1px solid black", padding: "7px", textAlign: "center" }}>
             <img src={avatar_url} alt="User Avatar" style={{width: "150px", borderRadius: "10%"}} />
-
             <p>{name}</p>
-            <p>Location: {location}</p>
+            <p>Location:  {location}</p>
             <p>Contact: nehamehar31@gmail.com</p>
         </div>
     );

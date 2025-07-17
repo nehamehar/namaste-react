@@ -1,30 +1,42 @@
-import React, { lazy, Suspense } from "react"
-import ReactDOM from "react-dom/client"
+import React, { lazy, Suspense, useState, useEffect } from "react";
+import ReactDOM from "react-dom/client";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Item from "./components/Item";
-import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import Cart from "./components/Cart";
 import Error from "./components/Error";
-import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestroMenu from "./components/RestroMenu";
-import { Suspense } from "react";
 import Shimmer from "./components/Shimmer";
 
-
+import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
 //Grocery
 const Grocery=lazy(()=>
     import ("./components/Grocery"))
 const AboutUs=lazy(()=>
     import("./components/AboutUs"))
-
 const AppContent=()=>{
+
+    const [userInfo, setUserInfo] = useState()
+    // authentication
+useEffect(() => {
+// Make an API call and send username and password
+const data = {name: "Neha Mehar"}
+setUserInfo(data.name)},
+[])
     return (
-        <div className="app">
+        <Provider store={appStore}>
+        <UserContext.Provider value={{ loggedInUser: userInfo, setUserInfo }}>
+            <div className="app">
             <Header/>
             <Outlet/>
         </div>
+        </UserContext.Provider>
+        </Provider>
     )
 }
 
