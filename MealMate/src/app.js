@@ -2,7 +2,6 @@ import React, { lazy, Suspense, useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Provider } from "react-redux";
-
 import Header from "./components/Header";
 import Body from "./components/Body";
 import Item from "./components/Item";
@@ -11,9 +10,9 @@ import Cart from "./components/Cart";
 import Error from "./components/Error";
 import RestroMenu from "./components/RestroMenu";
 import Shimmer from "./components/Shimmer";
-
 import UserContext from "./utils/UserContext";
 import appStore from "./utils/appStore";
+
 //Grocery
 const Grocery=lazy(()=>
     import ("./components/Grocery"))
